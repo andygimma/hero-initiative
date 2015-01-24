@@ -56,6 +56,7 @@ group :test, :development do
   gem 'guard-livereload'
   gem 'rack-livereload'
   gem 'guard-bundler'
+  gem 'sqlite3'
 end
 
 group :test do
