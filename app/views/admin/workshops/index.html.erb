@@ -1,0 +1,18 @@
+<h1>Locations</h1>
+<a href="/admin/workshops/new" class="btn btn-primary">Create Workshop</a>
+
+<table class="table table-bordered table-hover table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Region</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <%= render partial: "workshop", collection: @workshops %>
+    </tbody>
+</table>

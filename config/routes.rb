@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :users
     resources :regions
     resources :locations
+    resources :workshops
     root "dashboard#index"
   end
 

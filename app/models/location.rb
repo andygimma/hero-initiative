@@ -4,7 +4,8 @@ class Location < ActiveRecord::Base
   after_validation :geocode
 
   belongs_to :region
-
+  has_many :workshops
+  
   validates :name, presence: true
   validates :full_street_address, presence: true
   validates :city, presence: true
