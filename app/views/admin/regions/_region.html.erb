@@ -1,0 +1,8 @@
+
+<tr>
+    <td><%= region.name %></td>
+    <td>
+        <%= link_to "Edit", edit_admin_region_path(region), class: 'btn btn-xs btn-primary' %>
+        <%= link_to "Destroy", admin_region_path(region), class: 'btn btn-xs btn-danger', method: :delete, data: {confirm: "Are you sure?"} %>
+    </td>
+</tr>

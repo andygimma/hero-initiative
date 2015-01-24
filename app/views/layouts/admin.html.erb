@@ -3,7 +3,7 @@
 <head>
   <title>Hero4</title>
   <%= csrf_meta_tags %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
 
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" type="text/css" rel="stylesheet">
@@ -181,7 +181,9 @@
     .btn-twitter:hover {background-color:#3088FF;color:#62BBFF;}
     .btn-facebook:hover {background-color:#2A4998;color:#4C6BBA;}
     .btn-google-plus:hover {background-color:#C23836;color:#E45A58;}
-
+    a.plain {
+      color: white;
+    }
   </style>
 
 </head>
@@ -200,22 +202,22 @@
         <nav class="collapse navbar-collapse" role="navigation">
           <ul class="nav navbar-nav">
             <li>
+              <a href="/admin/users">Users</a>
+            </li>
+            <li>
+              <a href="/admin/regions">Regions</a>
+            </li>
+            <li>
+              <a href="/admin/locations">Locations</a>
+            </li>
+            <li>
               <a href="#">Workshops</a>
             </li>
             <li>
-              <a href="#">Locations</a>
+              <a href="#">Workshop Dates</a>
             </li>
             <li>
-              <a href="#">Calendar</a>
-            </li>
-            <li>
-              <a href="#">Map</a>
-            </li>
-            <li>
-              <%= link_to('About', static_pages_about_path) %>
-            </li>
-            <li>
-              <a href="#">Become a Hero</a>
+              <a href="#">Newsletter</a>
             </li>
             <% if current_user %>
               <li>
@@ -265,7 +267,8 @@
                     <li> Provide choices (options for people to choose career or entrepreneurial) </li>
                     <li> Increase civic engagement</p>
                   <ul>-->
-                  <p>“We live in a world in which we need to share responsibility. It's easy to say "It's not my child, not my community, not my world, not my problem." Then there are those who see the need and respond. I consider those people my heroes.” – Mr. Fred Rogers</p>
+                  <p>Welcome to the Admin Page</p>
+                  <p><a href="/" class="plain">CLICK HERE</a> to return to the regular website</p>
                 </div>
               </div>
             </div>
@@ -291,9 +294,9 @@
 
           <div class="panel">
             <div class="panel-body">
-
+              <%= flash[:alert] %>
+              <%= flash[:notice] %>
               <%= yield %>
-
             </div>
           </div>
 

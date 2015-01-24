@@ -1,0 +1,19 @@
+<h1>Locations</h1>
+<a href="/admin/locations/new" class="btn btn-primary">Create Location</a>
+
+<table class="table table-bordered table-hover table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Region</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <%= render partial: "location", collection: @locations %>
+    </tbody>
+</table>

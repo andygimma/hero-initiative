@@ -1,0 +1,15 @@
+<h1>Regions</h1>
+<a href="/admin/regions/new" class="btn btn-primary">Create Region</a>
+
+<table class="table table-bordered table-hover table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <%= render partial: "region", collection: @regions %>
+    </tbody>
+</table>

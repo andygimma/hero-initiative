@@ -1,0 +1,12 @@
+
+<tr>
+    <td><%= location.name %></td>
+    <td><%= location.full_street_address %></td>
+    <td><%= location.city %></td>
+    <td><%= location.state %></td>
+    <td><%= location.region.name unless location.region.nil? %></td>
+    <td>
+        <%= link_to "Edit", edit_admin_location_path(location), class: 'btn btn-xs btn-primary' %>
+        <%= link_to "Destroy", admin_location_path(location), class: 'btn btn-xs btn-danger', method: :delete, data: {confirm: "Are you sure?"} %>
+    </td>
+</tr>

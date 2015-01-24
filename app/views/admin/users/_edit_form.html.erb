@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, @user] do |f| %>
+  <%= f.error :base %>
+      <%= f.input :role, as: :select, collection: ["user", "admin"] %>
+      <%= f.input :region_id, as: :select, collection: @regions %>
+      <%= f.input :email %>
+      <div class="button-row-bottom">
+          <%= f.button :submit, :class => 'btn btn-primary' %>
+          <%= link_to "Cancel",  "/admin/users", :class => 'btn btn-default' %>
+      </div>
+<% end %>

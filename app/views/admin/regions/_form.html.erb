@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @region] do |f| %>
+  <%= f.error :base %>
+      <%= f.input :name, :input_html => {:size => 40} %>
+          <%= f.button :submit, :class => 'btn btn-primary' %>
+          <%= link_to "Cancel",  "/admin/regions", :class => 'btn btn-default' %>
+      </div>
+<% end %>

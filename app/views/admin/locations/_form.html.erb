@@ -1,0 +1,14 @@
+<%= simple_form_for [:admin, @location] do |f| %>
+  <%= f.error :base %>
+      <%= f.input :region_id, as: :select, collection: @regions %>
+      <%= f.input :name, :input_html => {:size => 40} %>
+      <%= f.input :full_street_address, :input_html => {:size => 40} %>
+      <%= f.input :city, :input_html => {:size => 40,} %>
+      <%= f.input :state, :input_html => {:size => 40} %>
+      <%= f.input :zip_code, :input_html => {:size => 40} %>
+
+      <div class="button-row-bottom">
+          <%= f.button :submit, :class => 'btn btn-primary' %>
+          <%= link_to "Cancel",  "/admin/users", :class => 'btn btn-default' %>
+      </div>
+<% end %>
