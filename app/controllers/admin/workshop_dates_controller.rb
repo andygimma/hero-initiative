@@ -51,7 +51,7 @@ class Admin::WorkshopDatesController < ActionController::Base
 
   def workshop_date_params
     params.require(:workshop_date).permit(
-      :name, :start_time, :end_time, :workshop_id
+      :name, :start_time, :end_time, :workshop_id, :description
     )
   end
 end

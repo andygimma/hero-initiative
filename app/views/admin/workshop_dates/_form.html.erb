@@ -2,6 +2,7 @@
   <%= f.error :base %>
       <%= f.input :workshop_id, as: :select, collection: @workshops %>
       <%= f.input :name, :input_html => {:size => 40} %>
+      <%= f.input :description, :input_html => { 'rows' => 5, 'cols' => 40 } %>
       <%= f.input :start_time %>
       <%= f.input :end_time %>
 

@@ -1,0 +1,14 @@
+<h2>Calendar - January</h2>
+
+<div id="articles">
+  <%= calendar do |date| %>
+    <%= date.day %>
+    <% if @workshops_by_date[date] %>
+      <ul>
+        <% @workshops_by_date[date].each do |workshop| %>
+          <li><%=  workshop.name %></li><br>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

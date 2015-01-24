@@ -10,6 +10,8 @@
 
 
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
          <!-- CSS code from Bootply.com editor -->
@@ -183,6 +185,45 @@
     .btn-facebook:hover {background-color:#2A4998;color:#4C6BBA;}
     .btn-google-plus:hover {background-color:#C23836;color:#E45A58;}
 
+    #articles .calendar {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    #articles .calendar td, #articles .calendar th {
+      font-family: "Lucida Grande", arial, helvetica, sans-serif;
+      font-size: 10px;
+      padding: 6px;
+      border: 1px solid #999;
+    }
+    #articles .calendar th {
+      background: #DDD;
+      color: #666;
+      text-align: center;
+      width: 14.2857142857143%;
+    }
+    #articles .calendar td {
+      background: #FFF;
+      color: #777;
+      height: 80px;
+      vertical-align: top;
+      font-size: 16px;
+    }
+    #articles .calendar .notmonth, #articles .calendar .notmonth a {
+      color: #CCC;
+    }
+    #articles .calendar .today {
+      background-color: #D7F2FF;
+    }
+
+    #articles #month {
+      margin: 0;
+    }
+
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+
   </style>
 
 </head>
@@ -207,7 +248,7 @@
               <a href="#">Locations</a>
             </li>
             <li>
-              <a href="#">Calendar</a>
+              <a href="/static_pages/calendar">Calendar</a>
             </li>
             <li>
               <a href="#">Map</a>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get 'static_pages/about'
+  get 'static_pages/calendar'
+  get 'static_pages/map'
 
   namespace :admin do
     resources :users

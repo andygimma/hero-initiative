@@ -54,9 +54,11 @@ ActiveRecord::Schema.define(version: 20150124212059) do
 
   create_table "workshop_dates", force: true do |t|
     t.string   "name"
+    t.text     "description"
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "workshop_id"
+    t.date     "start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
