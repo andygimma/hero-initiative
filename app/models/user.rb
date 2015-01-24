@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
 
   belongs_to :region
 
+  before_validation :default_role
+
   validates :role, presence: true
-  validates :region_id, presence: true
+
+  def default_role
+    binding.pry
+    self.role = "user" if role.nil?
+  end
 end

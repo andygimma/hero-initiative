@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :regions
     resources :locations
     resources :workshops
+    resources :workshop_dates
     root "dashboard#index"
   end
 

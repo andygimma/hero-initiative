@@ -1,0 +1,12 @@
+<%= simple_form_for [:admin, @workshop_date] do |f| %>
+  <%= f.error :base %>
+      <%= f.input :workshop_id, as: :select, collection: @workshops %>
+      <%= f.input :name, :input_html => {:size => 40} %>
+      <%= f.input :start_time %>
+      <%= f.input :end_time %>
+
+      <div class="button-row-bottom">
+          <%= f.button :submit, :class => 'btn btn-primary' %>
+          <%= link_to "Cancel",  "/admin/workshops", :class => 'btn btn-default' %>
+      </div>
+<% end %>

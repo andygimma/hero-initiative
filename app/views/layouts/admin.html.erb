@@ -214,14 +214,14 @@
               <a href="/admin/workshops">Workshops</a>
             </li>
             <li>
-              <a href="#">Workshop Dates</a>
+              <a href="/admin/workshop_dates">Workshop Dates</a>
             </li>
             <li>
               <a href="#">Newsletter</a>
             </li>
             <% if current_user %>
               <li>
-                <%= link_to('Logout', new_user_session_path, :method => :delete) %>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
               </li>
             <% else %>
               <li>

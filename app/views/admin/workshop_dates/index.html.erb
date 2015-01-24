@@ -1,0 +1,19 @@
+<h1>Workshop Dates</h1>
+<a href="/admin/workshop_dates/new" class="btn btn-primary">Create Workshop Date</a>
+
+<table class="table table-bordered table-hover table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Region</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <%= render partial: "workshop_date", collection: @workshop_dates %>
+    </tbody>
+</table>
