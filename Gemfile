@@ -35,6 +35,7 @@ gem 'simple_form'
 
 gem 'geocoder'
 
+gem 'unicorn', require: false
 
 
 # Use ActiveModel has_secure_password

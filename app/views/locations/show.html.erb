@@ -1,0 +1,49 @@
+<div class="row">
+  <br>
+  <div class="col-md-2 col-sm-3 text-center">
+    <%= image_tag("bvsjlogo.jpg", height: "50%", width: "50%") %>
+
+  </div>
+  <div class="col-md-10 col-sm-9">
+    <h3><%= @location.name%></h3>
+    <div class="row">
+      <div class="col-xs-9">
+        <h4><span class="label label-default"><%= @location.full_street_address %></span></h4>
+        <h4><span class="label label-default"><%= @location.city %></span></h4>
+        <h4><span class="label label-default"><%= @location.state %></span></h4>
+      </div>
+      <div class="col-xs-3">
+      </div>
+    </div>
+    <br><br>
+  </div>
+</div>
+<hr>
+
+<h3>Workshops</h3>
+
+<% @location.workshops.each do |workshop| %>
+
+  <div class="row">
+    <br>
+    <div class="col-md-2 col-sm-3 text-center">
+      <%= image_tag("bvsjlogo.jpg", height: "50%", width: "50%") %>
+
+    </div>
+    <div class="col-md-10 col-sm-9">
+      <h3><%= workshop.name%></h3>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4><span class="label label-default"><%= workshop.description %></span></h4>
+          <a class="btn btn-primary" href="/workshops/<%= workshop.id %>">Click here to see upcoming classes</a>
+        </div>
+        <div class="col-xs-3">
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <hr>
+
+<% end %>
+

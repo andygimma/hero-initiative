@@ -13,4 +13,12 @@ class StaticPagesController < ApplicationController
   def map
     @locations = Location.all
   end
+
+  def workshops
+    @workshops = Workshop.all
+  end
+
+  def locations
+    @locations = Location.all
+  end
 end

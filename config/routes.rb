@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#index'
+  match '/about', to: "static_pages#about", via: [:get]
+  match '/map', to: "static_pages#map", via: [:get]
+  match '/workshops', to: "static_pages#workshops", via: [:get]
+  match '/locations', to: "static_pages#locations", via: [:get]
+  match '/calendar', to: "static_pages#calendar", via: [:get]
 
-  get 'static_pages/about'
-  get 'static_pages/calendar'
-  get 'static_pages/map'
+  resources :locations, only: [:show]
+  resources :workshops, only: [:show]
 
   namespace :admin do
     resources :users

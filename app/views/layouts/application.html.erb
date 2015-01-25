@@ -223,6 +223,11 @@
       height: 500px;
       width: 100%;
     }
+    img.center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
   </style>
 
@@ -242,23 +247,28 @@
         <nav class="collapse navbar-collapse" role="navigation">
           <ul class="nav navbar-nav">
             <li>
-              <a href="#">Workshops</a>
+              <%= link_to('Workshops', workshops_path) %>
             </li>
             <li>
-              <a href="#">Locations</a>
+              <%= link_to('Locations', locations_path) %>
             </li>
             <li>
-              <a href="/static_pages/calendar">Calendar</a>
+              <%= link_to('Calender', calendar_path) %>
             </li>
             <li>
-              <a href="#">Map</a>
+              <%= link_to('Map', map_path) %>
             </li>
             <li>
-              <%= link_to('About', static_pages_about_path) %>
+              <%= link_to('About', about_path) %>
             </li>
             <li>
               <a href="#">Become a Hero</a>
             </li>
+            <% if current_user and current_user.role == "admin" %>
+              <li>
+                <%= link_to('Admin', admin_root_path) %>
+              </li>
+            <% end %>
             <% if current_user %>
               <li>
                 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
@@ -370,16 +380,18 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <ul class="list-inline">
               <li><i class="icon-facebook icon-2x"></i></li>
               <li><i class="icon-twitter icon-2x"></i></li>
               <li><i class="icon-google-plus icon-2x"></i></li>
               <li><i class="icon-pinterest icon-2x"></i></li>
             </ul>
-
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-4">
+              <p class="pull-right">Brought to you by <a href="http://www.bvsj.com">Black Veterans for Social Justice</a></p>
+          </div>
+          <div class="col-sm-4">
               <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>
           </div>
         </div>

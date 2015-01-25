@@ -1,0 +1,24 @@
+<% @locations.each do |location| %>
+
+  <div class="row">
+    <br>
+    <div class="col-md-2 col-sm-3 text-center">
+      <%= image_tag("bvsjlogo.jpg", height: "50%", width: "50%") %>
+
+    </div>
+    <div class="col-md-10 col-sm-9">
+      <h3><a href="/locations/<%= location.id %>"><%= location.name%></a></h3>
+      <div class="row">
+        <div class="col-xs-9">
+          <h4><span class="label label-default"></span></h4>
+        </div>
+        <div class="col-xs-3">
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <hr>
+
+<% end %>
+

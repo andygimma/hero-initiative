@@ -13,6 +13,6 @@ map.addLayer(osm);
 <% @locations.each do |location| %>
 
 L.marker([<%= location.latitude%>, <%=location.longitude%>]).addTo(map)
-    .bindPopup('<h2><%=location.name%></h2>');
+    .bindPopup('<h2><a href="/locations/<%= location.id %>"><%=location.name%></h2>');
 <%end%>
 </script>

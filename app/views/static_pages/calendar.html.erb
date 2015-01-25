@@ -6,7 +6,7 @@
     <% if @workshops_by_date[date] %>
       <ul>
         <% @workshops_by_date[date].each do |workshop| %>
-          <li><%=  workshop.name %></li><br>
+          <li><a href="/workshops/<%= workshop.id %>"><%=  workshop.name %></a></li><br>
         <% end %>
       </ul>
     <% end %>
