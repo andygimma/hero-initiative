@@ -233,6 +233,11 @@
       width: 100%;
     }
 
+    .center-alert {
+      margin-left: 40%;
+      margin-right: 40%;
+      width: 20%;
+    }
   </style>
 
 </head>
@@ -351,8 +356,18 @@
           <div class="panel">
             <div class="panel-body">
 
-              <%= flash[:alert] %>
-              <%= flash[:notice] %>
+              <% if flash[:alert] %>
+                <div class=" btn btn-danger center-alert">
+                  <%= flash[:alert] %>
+                </div>
+              <% end %>
+
+              <% if flash[:notice] %>
+                <div class=" btn btn-success center-alert">
+                  <%= flash[:notice] %>
+                </div>
+              <% end %>
+
               <%= yield %>
 
             </div>
