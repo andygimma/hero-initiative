@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   match '/workshops', to: "static_pages#workshops", via: [:get]
   match '/locations', to: "static_pages#locations", via: [:get]
   match '/calendar', to: "static_pages#calendar", via: [:get]
+  match '/become_a_hero', to: "static_pages#become_a_hero", via: [:get]
 
   match '/profile/:id', to: "profiles#show", via: [:get]
 

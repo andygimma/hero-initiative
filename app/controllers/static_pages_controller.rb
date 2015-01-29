@@ -21,4 +21,7 @@ class StaticPagesController < ApplicationController
   def locations
     @locations = Location.all
   end
+
+  def become_a_hero
+  end
 end
