@@ -31,6 +31,7 @@
         <div class="col-xs-9">
           <h4><%= workshop_date.description %></h4>
           <h4><span class="label label-default">Status: <%= workshop_date.status %></span></h4>
+          <h4><span class="label label-default">Location: <%= workshop_date.workshop.location.name %> at <%= workshop_date.workshop.location.geocodable_address %></span></h4>
           <h4><span class="label label-default">From: <%= workshop_date.start_time %></span></h4>
           <h4><span class="label label-default">To: <%= workshop_date.end_time %></span></h4>
         </div>
