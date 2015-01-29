@@ -5,8 +5,9 @@
     <%= date.day %>
     <% if @workshops_by_date[date] %>
       <ul>
-        <% @workshops_by_date[date].each do |workshop| %>
-          <li><a href="/workshops/<%= workshop.id %>"><%=  workshop.name %></a></li><br>
+        <% @workshops_by_date[date].each do |workshop_date| %>
+          <li><a href="/workshops/<%= workshop_date.workshop.id %>"><%=  workshop_date.workshop.name %></a></li>
+          <p><%= workshop_date.name %></p>
         <% end %>
       </ul>
     <% end %>
