@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   belongs_to :region
 
+  has_many :workshops
+
   before_validation :default_role
 
   validates :role, presence: true

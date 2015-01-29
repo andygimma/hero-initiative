@@ -229,6 +229,10 @@
       margin-right: auto;
     }
 
+    .fullWidth {
+      width: 100%;
+    }
+
   </style>
 
 </head>
@@ -270,6 +274,9 @@
               </li>
             <% end %>
             <% if current_user %>
+              <li>
+                <a href="/profile/<%= current_user.id %>">Profile</a>
+              </li>
               <li>
                 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
               </li>
@@ -344,6 +351,8 @@
           <div class="panel">
             <div class="panel-body">
 
+              <%= flash[:alert] %>
+              <%= flash[:notice] %>
               <%= yield %>
 
             </div>

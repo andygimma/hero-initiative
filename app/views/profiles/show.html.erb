@@ -1,0 +1,63 @@
+<h2>Welcome <%= @user.email %></h2>
+
+<div class="accordion" id="accordion2">
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle btn btn-primary fullWidth" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Become a HERO - Create a Workshop
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <h4>Teach your own workshop</h4>
+        <p>Is there something you love to do, or to talk about? Something you want others in your community to participate in?</p>
+        <p>Come and share it with everyone in your community by signing up.</p>
+        <a href="/workshops/new" class="btn btn-primary">Start a Workshop</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle btn btn-primary fullWidth" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+        See and Manage your workshops
+      </a>
+    </div>
+    <div id="collapseFour" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <% @workshops.each do |workshop| %>
+          <p><a href="/workshops/<%= workshop.id %>"><%= workshop.name %></a></p>
+        <% end %>
+
+        <a href="/workshop_dates/new" class="btn btn-primary">Add Dates to your Workshops</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle btn btn-primary fullWidth" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        My RSVPs
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle btn btn-primary fullWidth" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+        Upcoming Workshops
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <%= render partial: "workshop_date", collection: @workshop_dates %>
+      </div>
+    </div>
+  </div>
+</div>

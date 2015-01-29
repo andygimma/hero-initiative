@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def calendar
-    @workshops = WorkshopDate.all
+    @workshops = WorkshopDate.where(status: "approved")
     @workshops_by_date = @workshops.group_by(&:start_date)
   end
 
@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
   end
 
   def workshops
-    @workshops = Workshop.all
+    @workshops = Workshop.where(status: "approved")
   end
 
   def locations

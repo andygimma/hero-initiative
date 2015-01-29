@@ -4,6 +4,7 @@
     <td><%= workshop.description %></td>
     <td><%= workshop.location.name %></td>
     <td><%= workshop.location.region.name %></td>
+    <td><%= workshop.status %></td>
     <td>
         <%= link_to "Edit", edit_admin_workshop_path(workshop), class: 'btn btn-xs btn-primary' %>
         <%= link_to "Destroy", admin_workshop_path(workshop), class: 'btn btn-xs btn-danger', method: :delete, data: {confirm: "Are you sure?"} %>

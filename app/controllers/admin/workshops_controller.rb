@@ -4,7 +4,12 @@ class Admin::WorkshopsController < ActionController::Base
   before_action :authenticate_admin!
 
   def index
-    @workshops = Workshop.all
+    if params[:status]
+      @workshops = Workshop.where(status: "pending")
+      @pending_only = true
+    else
+      @workshops = Workshop.all
+    end
   end
 
   def new
@@ -51,7 +56,7 @@ class Admin::WorkshopsController < ActionController::Base
 
   def workshops_params
     params.require(:workshop).permit(
-      :name, :description, :location_id
+      :name, :description, :location_id, :status, :user_id
     )
   end
 end

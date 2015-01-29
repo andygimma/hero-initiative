@@ -1,11 +1,13 @@
 <%= simple_form_for [:admin, @workshop] do |f| %>
   <%= f.error :base %>
-      <%= f.input :location_id, as: :select, collection: @locations %>
-      <%= f.input :name, :input_html => {:size => 40} %>
-      <%= f.input :description, :input_html => { 'rows' => 5, 'cols' => 40 } %>
+    <%= f.input :location_id, as: :select, collection: @locations %>
+    <%= f.input :status, as: :select, collection: ["pending", "approved"] %>
+    <%= f.input :name, :input_html => {:size => 40} %>
+    <%= f.input :description, :input_html => { 'rows' => 5, 'cols' => 40 } %>
+    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
 
-      <div class="button-row-bottom">
-          <%= f.button :submit, :class => 'btn btn-primary' %>
-          <%= link_to "Cancel",  "/admin/workshops", :class => 'btn btn-default' %>
-      </div>
+    <div class="button-row-bottom">
+        <%= f.button :submit, :class => 'btn btn-primary' %>
+        <%= link_to "Cancel",  "/admin/workshops", :class => 'btn btn-default' %>
+    </div>
 <% end %>

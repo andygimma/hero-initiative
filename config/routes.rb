@@ -7,8 +7,12 @@ Rails.application.routes.draw do
   match '/locations', to: "static_pages#locations", via: [:get]
   match '/calendar', to: "static_pages#calendar", via: [:get]
 
+  match '/profile/:id', to: "profiles#show", via: [:get]
+
+
   resources :locations, only: [:show]
-  resources :workshops, only: [:show]
+  resources :workshops, only: [:show, :new, :create, :update, :edit]
+  resources :workshop_dates, only: [:new, :create, :update, :edit]
 
   namespace :admin do
     resources :users

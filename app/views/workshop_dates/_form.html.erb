@@ -1,7 +1,6 @@
-<%= simple_form_for [:admin, @workshop_date] do |f| %>
+<%= simple_form_for [@workshop_date] do |f| %>
   <%= f.error :base %>
       <%= f.input :workshop_id, as: :select, collection: @workshops %>
-      <%= f.input :status, as: :select, collection: ["pending", "approved"] %>
       <%= f.input :name, :input_html => {:size => 40} %>
       <%= f.input :description, :input_html => { 'rows' => 5, 'cols' => 40 } %>
       <%= f.input :start_time %>
