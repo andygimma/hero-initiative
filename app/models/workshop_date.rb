@@ -10,7 +10,5 @@ class WorkshopDate < ActiveRecord::Base
 
   def add_start_date
     self.start_date = self.start_time.to_date
-#     binding.pry
   end
-
 end

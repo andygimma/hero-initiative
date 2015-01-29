@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
   validates :role, presence: true
 
   def default_role
-    binding.pry
     self.role = "user" if role.nil?
   end
 end
