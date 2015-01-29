@@ -2,13 +2,12 @@
 <div id="map"></div>
 
 <script>
-var map = L.map('map').setView([51.505, -0.09], 13);
+var map = L.map('map').setView([<%= @locations.first.latitude %>, <%= @locations.first.longitude %>], 10);
 var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 var osmAttrib='Map data © OpenStreetMap contributors';
 var osm = new L.TileLayer(osmUrl, {attribution: osmAttrib});
 
 // start the map in South-East England
-map.setView(new L.LatLng(40.7, -73.9),10);
 map.addLayer(osm);
 <% @locations.each do |location| %>
 
