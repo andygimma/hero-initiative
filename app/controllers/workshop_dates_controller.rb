@@ -4,7 +4,7 @@ class WorkshopDatesController < ApplicationController
 
   def new
     @workshop_date = WorkshopDate.new
-    @workshops = Workshop.where(user_id: current_user.id, status: "approved")
+    @workshops = Workshop.where(user_id: current_user.id)
   end
 
   def create
