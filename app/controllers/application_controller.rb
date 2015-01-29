@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
   def authenticate_admin!
     redirect_to root unless current_user.role == "admin"
   end
+
+  def after_sign_in_path_for(resource)
+    if current_user.role == "admin"
+      admin_root_path()
+    elsif current_user.role == "user"
+      "/profile/#{current_user.id}"
+    end
+  end
 end
